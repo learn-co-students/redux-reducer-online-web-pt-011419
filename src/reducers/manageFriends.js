@@ -1,7 +1,11 @@
 export function manageFriends(previousState = {friends: []}, action){
     switch (action.type){
         case 'ADD_FRIEND':
-            return {...previousState, friends: previousState.friends.concat(action.friend)}
+        // Old way
+        // return {...previousState, friends: previousState.friends.concat(action.friend)}
+        
+        //ES6
+            return { ...previousState, friends: [...previousState.friends, action.friend]}
         case 'REMOVE_FRIEND':
             return ('remove')
         default:
